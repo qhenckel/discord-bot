@@ -1,7 +1,8 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const Client = require('./client/Client');
-const {token} = require('./config.json');
+//const {token} = require('./config.json');
+const {token} = process.env.S3_KEY;
 const {Player} = require('discord-player');
 
 const client = new Client();
