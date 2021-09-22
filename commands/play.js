@@ -45,6 +45,7 @@ module.exports = {
 
       const queue = await player.createQueue(interaction.guild, {
         metadata: interaction.channel,
+        autoSelfDeaf: false,
       });
 
       try {
