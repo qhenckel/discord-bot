@@ -17,6 +17,18 @@ for (const file of commandFiles) {
 
 //console.log(client.commands);
 
+client.on('message', msg => {
+    if(msg.content === 'say test 123'){
+        const broadcast = client.voice.createBroadcast();
+        const channelId = msg.member.voice.channelID;
+        const channel = client.channels.cache.get(channelId);
+        channel.join().then(connection => {
+            broadcast.play(discordTTS.getVoiceStream('test 123'));
+            const dispatcher = connection.play(broadcast);
+        });
+    }
+});
+
 const player = new Player(client);
 
 player.on('error', (queue, error) => {
