@@ -1,5 +1,6 @@
 const fs = require('fs');
 const Discord = require('discord.js');
+const discordTTS = require('discord-tts');
 const Client = require('./client/Client');
 //const {token} = require('./config.json');
 const token = process.env.TOKEN;
